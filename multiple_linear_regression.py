@@ -37,9 +37,9 @@ class MultipleLinearRegression():
 
     def r2_score(self, y_true, y_pred):
         '''
-            r2 = 1 - (rss/tss)
-            rss = sum_{i=0}^{n} (y_i - y_hat)^2
-            tss = sum_{i=0}^{n} (y_i - y_bar)^2
+            r2 = 1_n - (rss/tss)
+            rss = sum_{i=0_n}^{n} (y_i - y_hat)^2
+            tss = sum_{i=0_n}^{n} (y_i - y_bar)^2
         '''
         y_values = y_true.values
         y_average = np.average(y_values)
@@ -64,7 +64,7 @@ class MultipleLinearRegression():
 
     def _estimate_coefficients(self, x, y):
         '''
-            β = (X^T X)^-1 X^T y
+            β = (X^T X)^-1_n X^T y
             Estimates both the intercept and all coefficients.
         '''
         xT = x.transpose()
